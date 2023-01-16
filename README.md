@@ -6,6 +6,16 @@
 
 Demonstration of building a blockchain from scratch and understanding how blocks interact underneath the hood. It also illustrates how to adjust the difficulty levels and mimic peer-to-peer connections using Radis.
 
+# What is Blockchain?
+
+Blockchain is a decentralized, digital ledger that records transactions across a network of computers. Each block in the chain contains a number of transactions, and every time a new transaction is added to the network, it is recorded in a block. Once a block is added to the chain, it cannot be altered, ensuring the integrity and immutability of the data.
+
+The technology behind blockchain is based on cryptography, which is used to secure and verify the transactions on the network. Each block in the chain is connected to the previous block through a cryptographic hash, which serves as a unique fingerprint for that block. This creates a chain of blocks that are linked together, making it impossible to alter or tamper with the data in any previous block without breaking the entire chain.
+
+Blockchain also uses a consensus mechanism, such as proof-of-work or proof-of-stake, to ensure that the network agrees on the state of the ledger. This helps prevent malicious actors from corrupting the network or altering the data.
+
+In summary, blockchain is a digital ledger that is maintained across a network of computers, and uses cryptography and consensus mechanisms to ensure the integrity and immutability of the data.
+
 # Getting Started
 
 ## Requirements
@@ -15,7 +25,7 @@ Demonstration of building a blockchain from scratch and understanding how blocks
 - [Nodejs](https://nodejs.org/en/)
   - You'll know you've installed nodejs right if you can run:
     - `node --version` and get an ouput like: `vx.x.x`
-- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instead of `npm`
+- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) if you want instead of `npm`
   - You'll know you've installed yarn right if you can run:
     - `yarn --version` and get an output like: `x.x.x`
     - You might need to install it with npm
@@ -30,8 +40,8 @@ Demonstration of building a blockchain from scratch and understanding how blocks
 Clone this repo
 
 ```
-git clone https://github.com/vaasanthk/hardhat-simple-storage
-cd hardhat-simple-storage
+git clone https://github.com/vaasanthk/Blockchain-.git
+cd Blockchain
 ```
 
 Then install dependencies
@@ -42,93 +52,27 @@ yarn or npm i
 
 ## Usage
 
-Compile your code
-
 Run
 
 ```
-yarn hardhat compile or npx hardhat compile
-```
-
-Deploy:
-
-```
- yarn hardhat run scripts/deploy.js or npx hardhat run scripts/deploy.js
-```
-
-Testing:
-
-```
-yarn hardhat test or npx hardhat test
-```
-
-Test Coverage
-
-```
-yarn hardhat coverage or npx hardhat coverage
+npm run dev - for the client node
 
 ```
 
-And you'll see and output file called `gas-report.txt`
-
-## Local Deployment
-
-If you'd like to run your own local hardhat network, you can run:
+```
+npm run dev-peer - for the peers node
 
 ```
-yarn hardhat node or npx hardhat node
-```
 
-And then **in a different terminal**
+## Install dependencies
 
 ```
-yarn hardhat run scripts/deploy.js --network localhost or npx hardhat run scripts/deploy.js --network localhost
-```
-
-And you should see transactions happen in your terminal that is running `npx hardhat node`
-
-### Important localhost note
-
-If you use metamask with a local network, everytime you shut down your node, you'll need to reset your account. Settings -> Advanced -> Reset account. Don't do this with a metamask you have real funds in. And maybe don't do this if you're a little confused by this.
-
-## Deployment to a testnet or mainnet
-
-1. Setup environment variables
-
-You'll want to set your `RINKEBY_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
-
-- `PRIVATE_KEY`: The private key of your account (like from [metamask](https://metamask.io/)). **NOTE:** FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
-  - You can [learn how to export it here](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
-- `RINKEBY_RPC_URL`: This is url of the rinkeby testnet node you're working with. You can get setup with one for free from [Alchemy](https://alchemy.com/?a=673c802981)
-
-2. Get testnet ETH
-
-Head over to [faucets.chain.link](https://faucets.chain.link/) and get some tesnet ETH. You should see the ETH show up in your metamask.
-
-3. Deploy
-
-```
-yarn hardhat run scripts/deploy.js --network rinkeby or npx hardhat run scripts/deploy.js --network rinkeby
-```
-
-### Verify on etherscan
-
-If you deploy to a testnet or mainnet, you can verify it if you get an [API Key](https://etherscan.io/myapikey) from Etherscan and set it as an environment variable named `ETHERSCAN_API_KEY`. You can pop it into your `.env` file as seen in the `.env.example`.
-
-In it's current state, if you have your api key set, it will auto verify rinkeby contracts!
-
-However, you can manual verify with:
-
-```
-yarn hardhat verify ----constructor-args arguments.js DEPLOYED_CONTRACT_ADDRESS or npx hardhat verify --constructor-args arguments.js DEPLOYED_CONTRACT_ADDRESS
-```
-
-Verify Polygon
-
-```
-yarn hardhat verify CONTRACT_ADDR --network mumbai or npx hardhat verify CONTRACT_ADDR --network mumbai
-
-
+npm i redis@2.8.0
+npm i nodemon --save-dev
+npm i body-parser --save
+npm i hex-to-binary@1.0.1 --save
+npm i crypto
+npm i cross-env --save-dev
 ```
 
 # Thank you!
