@@ -69,11 +69,12 @@ npm run dev-peer - for the peers node
 ```
 npm i redis@2.8.0
 npm i nodemon --save-dev
-npm i body-parser --save
-npm i hex-to-binary@1.0.1 --save
+npm i body-parser 
+npm i hex-to-binary@1.0.1 
 npm i crypto
 npm i cross-env --save-dev
-npm i express
+npm i express 
+npm i body-parser 
 ```
 
 # Thank you!
