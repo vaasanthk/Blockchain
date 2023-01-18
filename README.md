@@ -72,7 +72,7 @@ npm i nodemon --save-dev
 npm i body-parser 
 npm i hex-to-binary@1.0.1 
 npm i crypto
-npm i cross-env --save-dev
+npm i cross-env@5.2.0 --save-dev
 npm i express 
 npm i body-parser 
 ```
