@@ -40,7 +40,7 @@ In summary, blockchain is a digital ledger that is maintained across a network o
 Clone this repo
 
 ```
-git clone https://github.com/vaasanthk/Blockchain-.git
+git clone https://github.com/vaasanthk/Blockchain.git
 cd Blockchain
 ```
 
